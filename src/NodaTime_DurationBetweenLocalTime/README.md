@@ -20,10 +20,10 @@ It is just because the overloaded `-` operator will create a `Period` object tha
 ### Fix:
 It turnout to be super simple... Just don't create the Period object!
 
+However note that the time spent is not a main concern for me but the massive amount of allocation has added pressure onto our GC load.
+
 A static method has now been added to `Period` class to compute the duration between
 2 `LocalTime` structs straight ahead without the need to instantiate the class at all.
-
-Tbh, the time spent is not a main concern but the massive amount of allocation has added pressure onto our GC load.
 
 As of writing of this document, the fix has been merged but not yet released.
 
